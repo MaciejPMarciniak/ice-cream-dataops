@@ -7,7 +7,6 @@ default_env = "test"
 # It will be updated by the 'cdf module upgrade' command.
 version = "0.3.2"
 
-
 [plugins]
 run = true
 pull = false
