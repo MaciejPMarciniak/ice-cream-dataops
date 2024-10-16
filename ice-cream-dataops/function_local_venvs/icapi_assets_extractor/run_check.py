@@ -17,7 +17,7 @@ def main() -> None:
 
     client = CogniteClient(
         config=ClientConfig(
-            client_name="CDF-Toolkit:0.3.2",
+            client_name="CDF-Toolkit:0.3.0b4",
             project="cdf-bootcamp-77-test",
             base_url="https://westeurope-1.cognitedata.com",
             credentials=credentials,
