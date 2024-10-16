@@ -249,17 +249,17 @@ yaml = ["PyYAML (>=6.0,<7.0)"]
 
 [[package]]
 name = "cognite-toolkit"
-version = "0.3.2"
+version = "0.3.0b4"
 description = "Official Cognite Data Fusion tool for project templates and configuration deployment"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "cognite_toolkit-0.3.2-py3-none-any.whl", hash = "sha256:a519514b369c9d9b66fbf1f77980cb1e585118997334093a480a13a329b1a296"},
-    {file = "cognite_toolkit-0.3.2.tar.gz", hash = "sha256:05f195bf47bc2e2905b845d497fc5a65e20341d4a535d33ade229ddda1bf8319"},
+    {file = "cognite_toolkit-0.3.0b4-py3-none-any.whl", hash = "sha256:9035e61c586701866f90c4b86891ac77c9733d9dc92a18aaf0706714e0ccce18"},
+    {file = "cognite_toolkit-0.3.0b4.tar.gz", hash = "sha256:588921606502935d1cc36bfa2836d1f0f064d0763632e7bc9d49d1aace958bba"},
 ]
 
 [package.dependencies]
-cognite-sdk = {version = ">=7.63.1,<8.0.0", extras = ["pandas"]}
+cognite-sdk = {version = ">=7.62.5,<8.0.0", extras = ["pandas"]}
 mixpanel = ">=4.10.1,<5.0.0"
 packaging = ">=22.0,<25.0"
 pandas = ">=1.5.3,<3.0"
@@ -995,4 +995,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11, <3.13"
-content-hash = "da2f3c3694f2f4d7ae3d48e0323509704360f54b98451e304a602590fce9805b"
+content-hash = "e2c6523690c5fb2c0657a1d2ee1473c9c55292e0966f3f27e55110cb66ca0fac"
