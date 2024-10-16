@@ -12,12 +12,12 @@ def main() -> None:
         token_url="https://login.microsoftonline.com/16e3985b-ebe8-4e24-9da4-933e21a9fc81/oauth2/v2.0/token",
         client_id="dcc964b0-929a-402c-b33c-31b0b1e8fdfc",
         client_secret=os.environ["IDP_CLIENT_SECRET"],
-        scopes=['https://westeurope-1.cognitedata.com/.default'],
+        scopes=["https://westeurope-1.cognitedata.com/.default"],
     )
 
     client = CogniteClient(
         config=ClientConfig(
-            client_name="CDF-Toolkit:0.3.0b4",
+            client_name="CDF-Toolkit:0.3.2",
             project="cdf-bootcamp-77-test",
             base_url="https://westeurope-1.cognitedata.com",
             credentials=credentials,
