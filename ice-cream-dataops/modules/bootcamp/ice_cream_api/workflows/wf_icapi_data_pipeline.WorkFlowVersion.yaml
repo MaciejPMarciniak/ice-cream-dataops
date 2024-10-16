@@ -23,9 +23,9 @@ workflowDefinition:
       onFailure: abortWorkflow
 
     - externalId: icapi_ts_assets_contextualization_task
-      type: function
+      type: transformation
       parameters:
-        function:
+        transformation:
           externalId: icapi_ts_assets_contextualization
           concurrencyPolicy: waitForCurrent
       retries: 3
@@ -50,7 +50,7 @@ workflowDefinition:
       type: function
       parameters:
         function:
-          externalId: icapi_timeseries_extractor
+          externalId: oee_timeseries
           concurrencyPolicy: waitForCurrent
       retries: 3
       timeout: 3600
