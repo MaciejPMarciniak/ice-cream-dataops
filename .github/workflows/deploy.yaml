@@ -1,4 +1,4 @@
-name: Deploy modules to prod project
+name: Deploy modules to test/prod project
 on:
   push:
     branches:
