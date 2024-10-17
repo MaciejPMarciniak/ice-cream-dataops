@@ -32,7 +32,7 @@ jobs:
         IDP_TOKEN_URL: ${{ vars.IDP_TOKEN_URL }}
         LOGIN_FLOW: ${{ vars.LOGIN_FLOW }}
 
-    name: Deploy
+    name: Deploy test
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -66,7 +66,7 @@ jobs:
         IDP_TOKEN_URL: ${{ vars.IDP_TOKEN_URL }}
         LOGIN_FLOW: ${{ vars.LOGIN_FLOW }}
 
-    name: Deploy
+    name: Deploy prod
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
