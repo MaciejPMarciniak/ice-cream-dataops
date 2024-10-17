@@ -18,9 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     env:
-        # DATA_DEVELOPER_OBJECT_ID: ${{ secrets.DATA_DEVELOPER_OBJECT_ID }}
-        # DATA_PIPELINE_OEE_OBJECT_ID: ${{ secrets.DATA_PIPELINE_OEE_OBJECT_ID }}
-        # ICAPI_EXTRACTORS_OBJECT_ID: ${{ secrets.ICAPI_EXTRACTORS_OBJECT_ID }}
         CDF_CLUSTER: ${{ vars.CDF_CLUSTER }}
         CDF_PROJECT: ${{ vars.CDF_PROJECT }}
         CDF_URL: ${{ vars.CDF_URL }}
