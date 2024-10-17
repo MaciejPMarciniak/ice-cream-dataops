@@ -24,14 +24,14 @@ jobs:
         CDF_PROJECT: ${{ vars.CDF_PROJECT }}
         CDF_URL: ${{ vars.CDF_URL }}
         DATA_PIPELINE_OEE_CLIENT_ID: ${{ vars.DATA_PIPELINE_OEE_CLIENT_ID }}
-        DATA_PIPELINE_OEE_CLIENT_SECRET: ${{ secrets.DATA_PIPELINE_OEE_CLIENT_SECRET }}
+        DATA_PIPELINE_OEE_CLIENT_SECRET: ${{ secrets.DATA_PIPELINE_OEE_CLIENT_SECRET }}  # secret
         ICAPI_EXTRACTORS_CLIENT_ID: ${{ vars.ICAPI_EXTRACTORS_CLIENT_ID }}
-        ICAPI_EXTRACTORS_CLIENT_SECRET: ${{ secrets.ICAPI_EXTRACTORS_CLIENT_SECRET }}
+        ICAPI_EXTRACTORS_CLIENT_SECRET: ${{ secrets.ICAPI_EXTRACTORS_CLIENT_SECRET }}  # secret
         IDP_CLIENT_ID: ${{ vars.IDP_CLIENT_ID }}
-        IDP_CLIENT_SECRET: ${{ secrets.IDP_CLIENT_SECRET }}
+        IDP_CLIENT_SECRET: ${{ secrets.IDP_CLIENT_SECRET }}  # secret
         IDP_SCOPES: ${{ vars.IDP_SCOPES }}
         IDP_TENANT_ID: ${{ vars.IDP_TENANT_ID }}
-        IDP_TOKEN_URL: ${{ varss.IDP_TOKEN_URL }}
+        IDP_TOKEN_URL: ${{ vars.IDP_TOKEN_URL }}
         LOGIN_FLOW: ${{ vars.LOGIN_FLOW }}
 
     name: Deploy
