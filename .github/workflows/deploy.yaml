@@ -14,6 +14,40 @@ on:
 env:
   PYTHON_VERSION: '3.11'
 jobs:
+  build-modules-test:
+    runs-on: ubuntu-latest
+    environment: test
+    env:
+        CDF_CLUSTER: ${{ vars.CDF_CLUSTER }}
+        CDF_PROJECT: ${{ vars.CDF_PROJECT }}
+        CDF_URL: ${{ vars.CDF_URL }}
+        DATA_PIPELINE_OEE_CLIENT_ID: ${{ vars.DATA_PIPELINE_OEE_CLIENT_ID }}
+        DATA_PIPELINE_OEE_CLIENT_SECRET: ${{ secrets.DATA_PIPELINE_OEE_CLIENT_SECRET }}  # secret
+        ICAPI_EXTRACTORS_CLIENT_ID: ${{ vars.ICAPI_EXTRACTORS_CLIENT_ID }}
+        ICAPI_EXTRACTORS_CLIENT_SECRET: ${{ secrets.ICAPI_EXTRACTORS_CLIENT_SECRET }}  # secret
+        IDP_CLIENT_ID: ${{ vars.IDP_CLIENT_ID }}
+        IDP_CLIENT_SECRET: ${{ secrets.IDP_CLIENT_SECRET }}  # secret
+        IDP_SCOPES: ${{ vars.IDP_SCOPES }}
+        IDP_TENANT_ID: ${{ vars.IDP_TENANT_ID }}
+        IDP_TOKEN_URL: ${{ vars.IDP_TOKEN_URL }}
+        LOGIN_FLOW: ${{ vars.LOGIN_FLOW }}
+
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Install cdf-tk
+        run: pip install cognite-toolkit==0.3.2
+      - name: "Build the test templates"
+        run: cdf-tk build --build-dir=./build --env=test
+      - name: "Deploy"
+        run: echo "Deploying to ${CDF_PROJECT} with ${CDF_CLUSTER}"
+      - name: "Deploy the test templates"
+        run: |
+          cdf-tk deploy --env=test
+
   build-modules:
     runs-on: ubuntu-latest
     environment: prod
@@ -40,15 +74,10 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install cdf-tk
         run: pip install cognite-toolkit==0.3.2
-      - name: "Build the test templates"
-        run: cdf-tk build --build-dir=./build --env=test
       - name: "Build the prod templates"
         run: cdf-tk build --build-dir=./build --env=prod
       - name: "Deploy"
         run: echo "Deploying to ${CDF_PROJECT} with ${CDF_CLUSTER}"
-      - name: "Deploy the test templates"
-        run: |
-          cdf-tk deploy --env=test
       - name: "Deploy the prod templates"
         run: |
           cdf-tk deploy --env=prod
