@@ -17,22 +17,22 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     env:
-        CDF_PROJECT: ${{ vars.CDF_PROJECT }}
-        IDP_CLIENT_ID: ${{ secrets.IDP_CLIENT_ID }}
-        IDP_TOKEN_URL: ${{ secrets.IDP_TOKEN_URL }}
         # DATA_DEVELOPER_OBJECT_ID: ${{ secrets.DATA_DEVELOPER_OBJECT_ID }}
         # DATA_PIPELINE_OEE_OBJECT_ID: ${{ secrets.DATA_PIPELINE_OEE_OBJECT_ID }}
         # ICAPI_EXTRACTORS_OBJECT_ID: ${{ secrets.ICAPI_EXTRACTORS_OBJECT_ID }}
-        DATA_PIPELINE_OEE_CLIENT_ID: ${{ secrets.DATA_PIPELINE_OEE_CLIENT_ID }}
-        ICAPI_EXTRACTORS_CLIENT_ID: ${{ secrets.ICAPI_EXTRACTORS_CLIENT_ID }}
-        CDF_CLUSTER: ${{ secrets.CDF_CLUSTER }}
-        IDP_TENANT_ID: ${{ secrets.IDP_TENANT_ID }}
-        IDP_CLIENT_SECRET: ${{ secrets.IDP_CLIENT_SECRET }}
+        CDF_CLUSTER: ${{ vars.CDF_CLUSTER }}
+        CDF_PROJECT: ${{ vars.CDF_PROJECT }}
+        CDF_URL: ${{ vars.CDF_URL }}
+        DATA_PIPELINE_OEE_CLIENT_ID: ${{ vars.DATA_PIPELINE_OEE_CLIENT_ID }}
         DATA_PIPELINE_OEE_CLIENT_SECRET: ${{ secrets.DATA_PIPELINE_OEE_CLIENT_SECRET }}
+        ICAPI_EXTRACTORS_CLIENT_ID: ${{ vars.ICAPI_EXTRACTORS_CLIENT_ID }}
         ICAPI_EXTRACTORS_CLIENT_SECRET: ${{ secrets.ICAPI_EXTRACTORS_CLIENT_SECRET }}
-        CDF_URL: ${{ secrets.CDF_URL }}
-        IDP_SCOPES: ${{ secrets.IDP_SCOPES }}
-        LOGIN_FLOW: ${{ secrets.LOGIN_FLOW }}
+        IDP_CLIENT_ID: ${{ vars.IDP_CLIENT_ID }}
+        IDP_CLIENT_SECRET: ${{ secrets.IDP_CLIENT_SECRET }}
+        IDP_SCOPES: ${{ vars.IDP_SCOPES }}
+        IDP_TENANT_ID: ${{ vars.IDP_TENANT_ID }}
+        IDP_TOKEN_URL: ${{ varss.IDP_TOKEN_URL }}
+        LOGIN_FLOW: ${{ vars.LOGIN_FLOW }}
 
     name: Deploy
     steps:
