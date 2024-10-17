@@ -5,6 +5,7 @@ on:
       - main # run when this branch changes (following a Pull Request)
     paths:
       - modules/** # run when changes in modules
+      - config.test.yaml # run when changes in config.test.yaml
       - config.prod.yaml # run when changes in config.prod.yaml
 
   # Allow manual triggering of the workflow
@@ -42,10 +43,15 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install cdf-tk
         run: pip install cognite-toolkit==0.3.2
+      - name: "Build the test templates"
+        run: cdf-tk build --build-dir=./build --env=test
       - name: "Build the prod templates"
         run: cdf-tk build --build-dir=./build --env=prod
       - name: "Deploy"
         run: echo "Deploying to ${CDF_PROJECT} with ${CDF_CLUSTER}"
+      - name: "Deploy the test templates"
+        run: |
+          cdf-tk deploy --env=test
       - name: "Deploy the prod templates"
         run: |
           cdf-tk deploy --env=prod
